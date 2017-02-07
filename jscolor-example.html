@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jscolor Example</title>
+	<style>
+			body{
+	padding:0;
+	margin:0;
+    background:url(web/images/banner2.jpg)no-repeat;
+    background-size: cover;
+    min-height: 700px;
+}
+
+	</style>
+	<link href="web/css/bootstrap.css" rel='stylesheet' type='text/css' />
+</head>
+<body style="text-align:center;">
+
+
+
+	<script src="jscolor.js"></script>
+
+
+
+	<h2><b>Pick Your Favourite color</b></h2>
+	Color: <input class="jscolor" value="AB4715">
+
+
+
+	<h2><b>Pick Your Favourite text color</b></h2>
+
+	<button class="jscolor {valueElement:'chosen-value', onFineChange:'setTextColor(this)'}" style="padding: 16px; border: 3px solid darkorchid;  border-style: outset;">
+		Click here
+	</button>
+
+	<b>HEX value:</b> <input id="chosen-value" value="21FF15">
+
+	<script>
+	function setTextColor(picker) {
+		document.getElementsByTagName('body')[0].style.color = '#' + picker.toString()
+	}
+	</script>
+
+
+
+	<p style="margin-top:3em;">Go back to<a href="web/index.html">Main Page</a>!</p>
+
+
+
+</body>
+</html>
