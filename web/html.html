@@ -16,6 +16,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Pacifico|Prata' rel='stylesheet' type='text/css'>
 <script src="js/main.js"></script>
 <link href="css/animate.min.css" rel="stylesheet">
+ <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+          
 <script src="js/wow.min.js"></script>
 <script>
  	new WOW().init();
@@ -38,10 +46,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		color: #efd12f;
 	}
 	a:hover{
-		color:#E74C3C;
+		color:#E74C3C; 
 	}
 	.content .container {
-		padding: 40px;
+		   padding: 60px;
+    	background-color: rgba(5, 3, 14, 0.07);
+	
+	}
+	.content .container p{
+		font-family: 'Barrio', cursive;
+		line-height: 2.5;
+    	letter-spacing: 0.4px;
+    	font-size: 19px;
+	}
+	
+	.content .container h2{
+		font-family: 'Robota';
+	}
+
+	.content .container h4{
+		font-family: 'Bree Serif', serif;
 	}
 </style>
 <!--Start of Tawk.to Script-->
@@ -145,27 +169,27 @@ s0.parentNode.insertBefore(s1,s0);
 
 		<div class="content" >
 		<div class="container">
-		<p>
-		HyperText Markup Language (HTML) is the standard markup language for creating web pages and web applications. With Cascading Style Sheets (CSS), and JavaScript, it forms a triad of cornerstone technologies for the World Wide Web.[1] Web browsers receive HTML documents from a webserver or from local storage and render them into multimedia web pages.
+		<p style="font-family: 'Barrio', cursive;">
+		HyperText Markup Language (HTML) is the standard markup language for creating web pages and web applications. With Cascading Style Sheets (CSS), and JavaScript, it forms a triad of cornerstone technologies for the World Wide Web . Web browsers receive HTML documents from a webserver or from local storage and render them into multimedia web pages.
 		</p>
 		</div>
 
 
-		<div class="container" >
+		<div class="container"  style="background-color:rgba(255, 235, 59, 0.72); " >
 
-		<h2> HTML Tags</h2>
-		SYNTAX:
+		<h2 > HTML Tags</h2>
+		<h4> SYNTAX: </h4>
 		<br>
 		<p> <code> &lt;tagname&gt; content goes here... &lt;/tagname&gt; </code></p> 
 		</div>
 
 
 		<div class="container" >
-		<h2>HTML Page Structure</h2>
+		<h2 >HTML Page Structure</h2>
 		<img src="images/html-structure.png">
 		</div>
 
-		<div class="container">
+		<div class="container" style="background-color:rgba(255, 235, 59, 0.72);">
 
 			<h2> HTML Tags</h2>
 			<p>
@@ -187,14 +211,21 @@ s0.parentNode.insertBefore(s1,s0);
 			<br>
 			<code> < br> </code>	Inserts a single line break
 			<br>
-			<code>< hr></code>	Defines a thematic change in the content
+			<code> < hr> </code>	Defines a thematic change in the content
 			<br>
 			<code>< !--...--><</code>	Defines a comment
 			<br>
+			<code> < pre> .. < /pre>    Used to insert preformated text into a page.</code>
+			<br>
+			<code> < BLOCKQUOTE>...< /BLOCKQUOTE>
+			Used for long quotes or citations. </code>
 			</p>
 		</div>
 
-		<div class="container " style="display:inline"> 
+		<div  style="display:inline-block; padding-left:200px;"> 
+		<h3>
+			Basic HTML Example 
+		</h3>
 			<pre>
 
 			&lt;!DOCTYPE html&gt;
@@ -204,15 +235,81 @@ s0.parentNode.insertBefore(s1,s0);
 &lt;/head&gt;
 &lt;body&gt;
 
-&lt;h1&gt;My First Heading&lt;/h1&rgt;
+&lt;h1&gt;My First Heading&lt;/h1&gt;
 &lt;p&gt;My first paragraph.&lt;/p&gt;
 
 &lt;/body&gt;
 &lt;/html&gt;
 </pre>
 </div>
+
+<div class="container" style="background-color:rgba(255, 235, 59, 0.72);" >
+
+	<h2>Images</h2>
+	<br>
+	<p>
+	< img> ... < /img>
+	</p>
+	<h4> Example </h4>
+	<code>< img src=" xyz.jpg"></code>
+	</div>
+	<div class="container" >
+	<h2>Anchor Tag</h2> 
+	<br>
+	<p>
+	< A>...< /A>
+	</p>
+	<br>
+	<h4> Example </h4>
+	<code>< a href="link.com"></a></code>
+	
+
+ </div>
+
+ <div class="container" style="background-color:rgba(255, 235, 59, 0.72);">
+
+	<h2>Lists</h2>
+	<br>
+	<ul class="collapsible popout" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>Ordered List </div>
+      <div class="collapsible-body"><span> 
+      <code>
+      	< ol><br>
+      		< li> LIST ITEM 1 < /li><br>
+      		< li> LIST ITEM 2 < /li><br>< /ol>
+      	</ ol>
+      </code>
+      </span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">place</i>Unordered List</div>
+      <div class="collapsible-body"><span>
+      	  <code>
+      	< ul><br>
+      		< li> LIST ITEM 1 < /li> <br>
+      		< li> LIST ITEM 2 < /li> <br>< /ul>
+      </code>
+      </span></div>
+    </li>
+  </ul>
+ </div>
+
+ <div class="container">
+
+
+
+
 </div>
 		
+
+<script type="text/javascript">
+	
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+</script>
+
 
 		</body>
 		</html>
