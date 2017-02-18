@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Shopping cart demo - Draggables, droppable, FX Highlight, Fx Drop, FX Pulsate, FX Shake, FX Transfer</title>
+		<script type="text/javascript" src="../jquery/core.js"></script>
+		<script type="text/javascript" src="../jquery/selector.js"></script>
+		<script type="text/javascript" src="../jquery/event.js"></script>
+		<script type="text/javascript" src="../jquery/ajax.js"></script>
+		<script type="text/javascript" src="../jquery/fx.js"></script>
+		<script type="text/javascript" src="../i/iutil.js"></script>
+		<script type="text/javascript" src="../i/idrag.js"></script>
+		<script type="text/javascript" src="../i/idrop.js"></script>
+		<script type="text/javascript" src="../i/accordion.js"></script>
+		<script type="text/javascript" src="../i/carousel.js"></script>
+		<script type="text/javascript" src="../i/fisheye.js"></script>
+		<script type="text/javascript" src="../i/iautocompleter.js"></script>
+		<script type="text/javascript" src="../i/icassistant.js"></script>
+		<script type="text/javascript" src="../i/iexpander.js"></script>
+		<script type="text/javascript" src="../i/imagebox.js"></script>
+		<script type="text/javascript" src="../i/iresizable.js"></script>
+		<script type="text/javascript" src="../i/iselect.js"></script>
+		<script type="text/javascript" src="../i/islider.js"></script>
+		<script type="text/javascript" src="../i/islideshow.js"></script>
+		<script type="text/javascript" src="../i/isortables.js"></script>
+		<script type="text/javascript" src="../i/ittabs.js"></script>
+		<script type="text/javascript" src="../i/ifx.js"></script>
+		<script type="text/javascript" src="../i/ifxblind.js"></script>
+		<script type="text/javascript" src="../i/ifxbounce.js"></script>
+		<script type="text/javascript" src="../i/ifxdrop.js"></script>
+		<script type="text/javascript" src="../i/ifxfold.js"></script>
+		<script type="text/javascript" src="../i/ifxhighlight.js"></script>
+		<script type="text/javascript" src="../i/ifxopenclose.js"></script>
+		<script type="text/javascript" src="../i/ifxscale.js"></script>
+		<script type="text/javascript" src="../i/ifxscrollto.js"></script>
+		<script type="text/javascript" src="../i/ifxshake.js"></script>
+		<script type="text/javascript" src="../i/ifxslide.js"></script>
+		<script type="text/javascript" src="../i/ifxtransfer.js"></script>
+<style type="text/css">
+*
+{
+	margin: 0;
+	padding: 0;
+}
+body
+{
+	background-color: #fff;
+	color: #000;
+	font-family:Arial, Helvetica, sans-serif;
+	padding: 20px;
+	font-size: 12px;
+}
+h1
+{
+	font-size: 15px;
+	color: #6CAF00;
+	margin: 0 0 30px 0;
+}
+#cart
+{
+	width: 200px;
+	border: 1px solid #eee;
+	float: right;
+}
+#cart h3
+{
+	background-color: #6CAF00;
+	padding: 4px;
+	color: #000;
+	font-size: 12px;
+	color: #fff;
+}
+#cart p
+{
+	padding:  10px 4px;
+}
+.cart
+{
+	background-color: #f8f8f8;
+}
+.activeCart
+{
+	background-color: #DAFF9F;
+}
+.hoverCart
+{
+	background-color:#FFFFCC;
+}
+#products
+{
+	margin-right: 250px;
+	width: 600px;
+}
+.product
+{
+	width: 200px;
+	height: 200px;
+	float: left;
+	margin-bottom: 20px;
+}
+.product img
+{
+	cursor: move;
+}
+.product h2
+{
+	font-size: 12px;
+	padding: 6px 0;
+}
+.product p
+{
+	font-size: 11px;
+	color: #333;
+}
+.product a
+{
+	color: #6CAF00;
+}
+.productCart
+{
+	font-size: 10px;
+	margin: 10px;
+}
+.productCart a
+{
+	color: #f00;
+	float: right;
+}
+.transferProduct
+{
+	border: 1px solid #6CAF00;
+}
+</style>
+</head>
+
+<body>
+<div id="cart" class="cart">
+	<h3>Your cart</h3>
+	<div id="cartProducts"></div>
+	<p><strong>Total: <span id="cartTotal">0.-</span> $</strong></p>
+</div>
+<h1>Drag products into shopping cart</h1>
+<div id="products">
+	<div id="product1" class="product">
+		<img src="images/cart/th_17l519col3.jpg" alt="" />
+		<h2>Product 1</h2>
+		<p>Long sleeve shirt</p>
+		<p><strong>Price: <span>49.95</span> $</strong></p>
+		<a href="#">add to cart</a>
+	</div>
+	<div id="product2" class="product">
+		<img src="images/cart/th_30l519col4.jpg" width="170" height="128" />
+		<h2>Product 2</h2>
+		<p>Long Sleeve, stripes</p>
+		<p><strong>Price: <span>49.95</span> $</strong></p>
+		<a href="#">add to cart</a>
+	</div>
+	<div id="product3" class="product">
+		<img src="images/cart/th_13l569col2.jpg" width="170" height="128" />
+		<h2>Product 3</h2>
+		<p>Long Sleeve fantasy style</p>
+		<p><strong>Price: <span>49.95</span> $</strong></p>
+		<a href="#">add to cart</a>
+	</div>
+	<div id="product4" class="product">
+		<img src="images/cart/th_13l569col1.jpg" width="170" height="128" />
+		<h2>Product 4</h2>
+		<p>Long sleeve classic style white fantasy</p>
+		<p><strong>Price: <span>49.95</span> $</strong></p>
+		<a href="#">add to cart</a>
+	</div>
+	<div id="product5" class="product">
+		<img src="images/cart/th_17l519col1.jpg" width="170" height="128" />
+		<h2>Product 5</h2>
+		<p>Long sleeve, stripes</p>
+		<p><strong>Price: <span>49.95</span> $</strong></p>
+		<a href="#">add to cart</a>
+	</div>
+	<div id="product6" class="product">
+		<img src="images/cart/th_519plain1112col3.jpg" width="170" height="128" />
+		<h2>Product 6</h2>
+		<p>Long sleeve</p>
+		<p><strong>Price: <span>49.95</span> $</strong></p>
+		<a href="#">add to cart</a>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(
+	function()
+	{
+		$('#products a')
+			.bind(
+				'click',
+				function() {
+					$(this.parentNode)
+						.TransferTo(
+							{
+								to:addProductToCart(this.parentNode),
+								className:'transferProduct',
+								duration: 400
+							}
+						);
+					return false;
+				}
+			);
+		$('div.product').Draggable({revert: true, fx: 300, ghosting: true, opacity: 0.4});
+		$('#cart').Droppable(
+			{
+				accept :		'product', 
+				activeclass:	'activeCart', 
+				hoverclass:		'hoverCart',
+				tolerance:		'intersect',
+				onActivate:		function(dragged)
+				{
+					if (!this.shakedFirstTime) {
+						$(this).Shake(3);
+						this.shakedFirstTime = true;
+					}
+				},
+				onDrop:			addProductToCart
+			}
+		);
+	}
+);
+var addProductToCart = function(dragged)
+{
+	var cartItem;
+	var productName = $('h2', dragged).html();
+	var productPrice = parseFloat($('span', dragged).html());
+	var productId = $(dragged).attr('id');
+	var isInCart = $('#' + productId + '_cart');
+	if (isInCart.size() == 1) {
+		var quantity = parseInt(isInCart.find('span.quantity').html()) + 1;
+		isInCart.find('span.quantity').html(quantity+'').end().Pulsate(300, 2);
+		cartItem = isInCart.get(0);
+	} else {
+		$('#cartProducts')
+			.append('<div class="productCart" id="' + productId + '_cart">' + productName + '<a href="#">remove</a><br />qty: <span class="quantity">1</span><br />price: <span class="price">' + productPrice + ' $</span></div>')
+			.find('div.productCart:last')
+			.fadeIn(400)
+			.find('a')
+			.bind(
+				'click', 
+				function(){
+					$(this.parentNode).DropOutDown(
+						400,
+						function() {
+							$(this).remove();
+							calculateCartTotal();
+						}
+					);
+					return false;
+				}
+			);
+		cartItem = $('div.productCart:last').get(0);
+	}
+	calculateCartTotal();
+	return cartItem;
+};
+var calculateCartTotal = function()
+{
+	var total = 0;
+	$('#cartProducts .productCart').each(
+		function()
+		{
+			var price = parseFloat($('span.price', this).html());
+			var quantity = parseInt($('span.quantity', this).html());
+			total += price * quantity;
+		}
+	);
+	$('#cartTotal').html(formatNr(total));
+	$('#cart p').Highlight(500, '#ff0', function(){$(this).css('backgroundColor', 'transparent');});
+};
+var formatNr = function(nr)
+{
+	thousands = parseInt(nr/1000);
+	hundreds = parseInt(nr - thousands*1000);
+	decimals = parseInt((nr - parseInt(nr)) * 100);
+	return (thousands > 0 ? thousands + ' ' : '') + (nr > 1000 & hundreds < 100 ? '0' : '') + (nr > 1000 & hundreds < 10 ? '0' : '') + hundreds + '.' + (decimals > 0 ? decimals : '-');
+}
+</script>
+		<script language="JavaScript" type="text/javascript">var client_id = 1;</script>
+		<script language="JavaScript" src="http://stats.byspirit.ro/track.js" type="text/javascript"></script>
+		<noscript>
+		<p><img alt="" src="http://stats.byspirit.ro/image.php?client_id=1" width="1" height="1" /></p>
+		</noscript>
+</body>
+</html>
